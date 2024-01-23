@@ -114,22 +114,7 @@ def doit_time(N_US_per_star=100, K=10000, N_repeat = 100):
     end = time.time()
     print('# required time = %lf' % (end-start), 'sec (Repeated for %d times.)' % (N_repeat))
     print('-'*20)
-    """
-    print()
-    print('# matrix_A')
-    print(matrix_A)
-    print()
-    print('# matrix_B')
-    print(matrix_B)
 
-    print()
-    print('# matrix_A_T__xNB')
-    print(matrix_A_T__xNB)
-    
-    print()
-    print('# matrix_B__xNA_T')
-    print(matrix_B__xNA_T)
-    """
     
     print('[3] Construction of diff_AB_2')
     start = time.time()
@@ -157,7 +142,7 @@ def doit_time(N_US_per_star=100, K=10000, N_repeat = 100):
             #argmin_diff_AB_2 = dmin2_AB #numpy.argmin(numpy.sum(diff_AB_2, axis=1))
             argmin_diff_AB_2 = numpy.argmin(d2_AB)
             best_j_for_a_given_star = int(argmin_diff_AB_2 / N_B)
-            best_k_for_a_given_star =    (argmin_diff_AB_2 % N_A)
+            best_k_for_a_given_star =    (argmin_diff_AB_2 % N_B)
     end = time.time()
     print('# required time = %lf' % (end-start), 'sec (Repeated for %d times.)' % (N_repeat))
     print('-'*20)
